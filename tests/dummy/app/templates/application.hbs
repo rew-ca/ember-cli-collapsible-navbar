@@ -1,5 +1,15 @@
 <h2 id="title">ember-cli-collapsible-navbar</h2>
 
-{{#collapsible-navbar}}
-    <li><a href="">link 1</a></li>
-{{/collapsible-navbar}}
+<a href="" {{action "toggleNavbar" showNavbar}}>
+    {{#if showNavbar}}
+        hide navbar
+    {{else}}
+        show navbar
+    {{/if}}
+</a>
+
+{{#if showNavbar}}
+    {{#collapsible-navbar}}
+        <li><a href="" {{action "noop"}}>link 1</a></li>
+    {{/collapsible-navbar}}
+{{/if}}
